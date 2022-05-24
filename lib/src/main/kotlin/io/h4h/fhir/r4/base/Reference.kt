@@ -39,7 +39,7 @@ import kotlinx.serialization.Serializable
  */
 
 @Serializable
-data class Reference(
+data class Reference @JvmOverloads constructor(
 
     /**
      * A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources.
@@ -50,8 +50,8 @@ data class Reference(
      * The expected type of the target of the reference. If both Reference.type and Reference.reference are populated and Reference.reference is a FHIR URL, both SHALL be consistent.
      *
      * The type is the Canonical URL of Resource Definition that is the type this reference refers to. References are URLs that are relative to http://hl7.org/fhir/StructureDefinition/ e.g. "Patient" is a reference to http://hl7.org/fhir/StructureDefinition/Patient. Absolute URLs are only allowed for logical models (and can only be used in references in logical models, not resources).
+     * @Binding(valueSet = "http://hl7.org/fhir/ValueSet/resource-types")
      */
-    // @Binding(valueSet = "http://hl7.org/fhir/ValueSet/resource-types")
     val type: String? = null,
 
     /**

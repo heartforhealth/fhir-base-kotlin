@@ -39,7 +39,8 @@ import kotlinx.serialization.Serializable
  */
 
 @Serializable
-data class CodeableConcept(
+data class CodeableConcept @JvmOverloads constructor(
+
     /**
      * A reference to a code defined by a terminology system.
      */
@@ -50,4 +51,34 @@ data class CodeableConcept(
      */
     val text: String? = null
 
-)
+) {
+
+
+    override fun equals(other: Any?): Boolean {
+        return when (other) {
+            is CodeableConcept -> {
+                // base condition
+                if (this.coding.isNullOrEmpty() && other.coding.isNullOrEmpty()) return true
+
+                // if at least one coding is the same, return true
+                this.coding?.forEach { coding ->
+                    other.coding?.first { coding == it }?.let {
+                        return@equals true
+                    }
+                }
+
+                // fallback
+                return false
+            }
+            else -> false
+        }
+    }
+
+
+    override fun hashCode(): Int {
+        var result = coding?.hashCode() ?: 0
+        result = 31 * result + (text?.hashCode() ?: 0)
+        return result
+    }
+
+}

@@ -46,11 +46,11 @@ data class Narrative(
      * The status of the narrative - whether it's entirely generated (from just the defined data or the extensions too), or whether a human authored it and it may contain additional data.
      */
     //@Binding(valueSet = "http://hl7.org/fhir/ValueSet/narrative-status")
-    var status: NarrativeStatus? = null,
+    val status: NarrativeStatus? = null,
 
     /**
      * The actual narrative content, a stripped down version of XHTML.
      */
-    var div: String? = null
+    val div: String? = null
 
 )

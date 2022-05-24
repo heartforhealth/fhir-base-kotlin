@@ -39,7 +39,7 @@ import kotlinx.serialization.Serializable
  */
 
 @Serializable
-data class Coding (
+data class Coding @JvmOverloads constructor(
     /**
      * The identification of the code system that defines the meaning of the symbol in the code.
      */
@@ -65,4 +65,21 @@ data class Coding (
      */
     val userSelected: Boolean? = null
 
-)
+) {
+
+    override fun equals(other: Any?): Boolean {
+        return when (other) {
+            is Coding -> {
+                (this.code == other.code) && (this.system == other.system)
+            }
+            else -> false
+        }
+    }
+
+    override fun hashCode(): Int {
+        var result = system?.hashCode() ?: 0
+        result = 31 * result + (code?.hashCode() ?: 0)
+        return result
+    }
+
+}
