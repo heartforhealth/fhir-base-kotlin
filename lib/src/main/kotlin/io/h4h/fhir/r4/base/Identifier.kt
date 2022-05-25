@@ -37,21 +37,19 @@ import kotlinx.serialization.Serializable
 /**
  * An identifier - identifies some entity uniquely and unambiguously. Typically this is used for business identifiers.
  */
-
-
 @Serializable
-data class Identifier(
+data class Identifier @JvmOverloads constructor(
 
     /**
      * The purpose of this identifier.
+     * @Binding(valueSet = "http://hl7.org/fhir/ValueSet/identifier-use")
      */
-    // @Binding(valueSet = "http://hl7.org/fhir/ValueSet/identifier-use")
     val use: IdentifierUse? = null,
 
     /**
      * A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.
+     * @Binding(valueSet = "http://hl7.org/fhir/ValueSet/identifier-type")
      */
-    // @Binding(valueSet = "http://hl7.org/fhir/ValueSet/identifier-type")
     val type: CodeableConcept? = null,
 
     /**
@@ -74,4 +72,10 @@ data class Identifier(
      */
     val assigner: Reference? = null
 
-)
+) {
+
+    /// most used constructor
+    constructor(value: String) : this(null, null, null, value, null, null)
+    /// most used constructor
+    constructor(value: String, system: String) : this(null, null, system, value, null, null)
+}

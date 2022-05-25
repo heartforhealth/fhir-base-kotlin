@@ -64,4 +64,8 @@ data class Reference @JvmOverloads constructor(
      */
     val display: String? = null
 
-)
+) {
+
+    /// most used constructor
+    constructor(type: String, identifier: Identifier) : this(null, type, identifier, null)
+}
