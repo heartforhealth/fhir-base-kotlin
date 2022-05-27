@@ -40,6 +40,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Coding @JvmOverloads constructor(
+
     /**
      * The identification of the code system that defines the meaning of the symbol in the code.
      */

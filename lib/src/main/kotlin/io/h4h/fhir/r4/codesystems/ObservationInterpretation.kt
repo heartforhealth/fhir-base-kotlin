@@ -1,6 +1,7 @@
 package io.h4h.fhir.r4.codesystems
 
 import io.h4h.fhir.r4.base.CodeableEnumeration
+import kotlinx.serialization.SerialName
 
 
 /*
@@ -89,6 +90,7 @@ enum class ObservationInterpretation : CodeableEnumeration {
      *
      * Synonyms: Below analytical limit, low off scale.
      */
+    @SerialName("<")
     LESS_THAN,
 
     /**
@@ -96,6 +98,7 @@ enum class ObservationInterpretation : CodeableEnumeration {
      *
      * Synonyms: Above analytical limit, high off scale.
      */
+    @SerialName(">")
     GREATER_THAN,
 
 
@@ -257,6 +260,7 @@ enum class ObservationInterpretation : CodeableEnumeration {
      *
      * Open Issue: The print name of the code is very general and the description is very specific to a pair of classes of agents, which may lead to confusion of these concepts in the future should other synergies be found.
      */
+    @SerialName("SYN-S")
     SYNS,
 
 

@@ -1,28 +1,34 @@
 package io.h4h.fhir.r4.base
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 
 @Serializable
 enum class NarrativeStatus : CodeableEnumeration {
+
     /**
      * The contents of the narrative are entirely generated from the core elements in the content.
      */
+    @SerialName("generated")
     GENERATED,
 
     /**
      * The contents of the narrative are entirely generated from the core elements in the content and some of the content is generated from extensions. The narrative SHALL reflect the impact of all modifier extensions.
      */
+    @SerialName("extensions")
     EXTENSIONS,
 
     /**
      * The contents of the narrative may contain additional information not found in the structured data. Note that there is no computable way to determine what the extra information is, other than by human inspection.
      */
+    @SerialName("additional")
     ADDITIONAL,
 
     /**
      * The contents of the narrative are some equivalent of "No human-readable text provided in this case".
      */
+    @SerialName("empty")
     EMPTY;
 
 
@@ -35,13 +41,7 @@ enum class NarrativeStatus : CodeableEnumeration {
         }
 
 
-    override val system: String?
-        get() = when (this) {
-            GENERATED -> "http://hl7.org/fhir/narrative-status"
-            EXTENSIONS -> "http://hl7.org/fhir/narrative-status"
-            ADDITIONAL -> "http://hl7.org/fhir/narrative-status"
-            EMPTY -> "http://hl7.org/fhir/narrative-status"
-        }
+    override val system = "http://hl7.org/fhir/narrative-status"
 
 
     override val definition: String?

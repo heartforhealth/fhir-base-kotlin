@@ -37,7 +37,6 @@ import kotlinx.serialization.Serializable
 /**
  * The metadata about a resource. This is content in the resource that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.
  */
-
 @Serializable
 data class Meta(
 
@@ -65,14 +64,14 @@ data class Meta(
 
     /**
      * Security labels applied to this resource. These tags connect specific resources to the overall security policy and infrastructure.
+     * @Binding(valueSet = "http://hl7.org/fhir/ValueSet/security-labels")
      */
-    // @Binding(valueSet = "http://hl7.org/fhir/ValueSet/security-labels")
     val security: List<Coding>? = null,
 
     /**
      * Tags applied to this resource. Tags are intended to be used to identify and relate resources to process and workflow, and applications are not required to consider the tags when interpreting the meaning of a resource.
+     * @Binding(valueSet = "http://hl7.org/fhir/ValueSet/common-tags")
      */
-    // @Binding(valueSet = "http://hl7.org/fhir/ValueSet/common-tags")
     val tag: List<Coding>? = null
 
 )

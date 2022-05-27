@@ -9,7 +9,7 @@
 
 
 group = "io.h4h"
-version = "0.1.0"
+version = "0.1.1"
 
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
@@ -59,7 +59,7 @@ dependencies {
 
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-serialization-core-jvm
-    api("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.3.2")
+    api("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.3.3")
 
     // Use the Kotlin test library.
     testImplementation("org.jetbrains.kotlin:kotlin-test")
