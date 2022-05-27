@@ -66,10 +66,10 @@ dependencies {
 
     // Use the Kotlin JUnit integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
-
-    // Use Jackson for testing serialization
-    // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-kotlin
+    // Jackson serialization
     testImplementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.1")
+    // kotlin serialization
+    testImplementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
 }
 
 
