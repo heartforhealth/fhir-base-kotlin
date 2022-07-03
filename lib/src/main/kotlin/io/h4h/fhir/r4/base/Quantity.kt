@@ -1,7 +1,9 @@
 package io.h4h.fhir.r4.base
 
 
+import io.h4h.fhir.r4.serializers.DoubleSerializer
 import kotlinx.serialization.Serializable
+
 
 
 /*
@@ -44,6 +46,7 @@ data class Quantity(
     /**
      * The value of the measured amount. The value includes an implicit precision in the presentation of the value.
      */
+    @Serializable(with=DoubleSerializer::class)
     val value: Double? = null,
 
     /**
@@ -68,3 +71,9 @@ data class Quantity(
     val code: String? = null
 
 )
+
+
+
+
+
+

@@ -62,7 +62,7 @@ data class CodeableConcept @JvmOverloads constructor(
 
                 // if at least one coding is the same, return true
                 this.coding?.forEach { coding ->
-                    other.coding?.first { coding == it }?.let {
+                    other.coding?.firstOrNull { coding == it }?.let {
                         return@equals true
                     }
                 }

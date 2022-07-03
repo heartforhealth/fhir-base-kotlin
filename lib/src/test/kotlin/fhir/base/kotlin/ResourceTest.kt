@@ -21,10 +21,7 @@ open class ResourceTest {
         ?.readText()
 
 
-    inline fun <reified T: Resource> deserializeSerializeResource(name: String) {
-        val resource = loadResource(name)
-            ?: throw Error("expected resource '$name' in resources folder")
-
+    inline fun <reified T> deserializeSerializeResource(resource: String) {
         val data = json.decodeFromString<T>(resource)
         println(data)
         val string = json.encodeToString(data)

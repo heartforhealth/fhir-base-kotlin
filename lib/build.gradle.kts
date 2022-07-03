@@ -9,7 +9,7 @@
 
 
 group = "io.h4h"
-version = "0.1.1"
+version = "0.1.2"
 
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
@@ -70,6 +70,8 @@ dependencies {
     testImplementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.1")
     // kotlin serialization
     testImplementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
+    testImplementation("com.github.jershell:kbson:0.4.4")
+    testImplementation("org.mongodb:bson:4.5.0")
 }
 
 
