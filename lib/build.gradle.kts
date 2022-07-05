@@ -9,7 +9,7 @@
 
 
 group = "io.h4h"
-version = "0.1.2"
+version = "0.1.3-alpha1"
 
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
@@ -60,15 +60,16 @@ dependencies {
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-serialization-core-jvm
     api("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.3.3")
+    // kotlinx datetime
+    api("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
 
     // Use the Kotlin test library.
     testImplementation("org.jetbrains.kotlin:kotlin-test")
 
     // Use the Kotlin JUnit integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
-    // Jackson serialization
+    // Test serialization
     testImplementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.1")
-    // kotlin serialization
     testImplementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
     testImplementation("com.github.jershell:kbson:0.4.4")
     testImplementation("org.mongodb:bson:4.5.0")

@@ -39,6 +39,7 @@ import kotlinx.serialization.SerialName
  * Set of terminology concepts related to Observation Interpretation
  * @see <a href="http://hl7.org/fhir/R4/valueset-observation-interpretation.html">HL7 link</a>
  * */
+@kotlinx.serialization.Serializable
 enum class ObservationInterpretation : CodeableEnumeration {
     /**
      * Codes that specify interpretation of genetic analysis, such as "positive", "negative", "carrier", "responsive", etc.

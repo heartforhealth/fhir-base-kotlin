@@ -3,6 +3,7 @@ package io.h4h.fhir.r4.serializers
 
 
 import kotlinx.serialization.KSerializer
+import kotlinx.serialization.SerializationException
 import kotlinx.serialization.Serializer
 import kotlinx.serialization.descriptors.PrimitiveKind
 import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
@@ -32,7 +33,7 @@ object DoubleSerializer : KSerializer<Double> {
                 decoder.decodeInt().toDouble()
             } catch (intException: Exception) {
                 // throw further
-                throw intException
+                throw SerializationException(intException)
             }
         }
     }
