@@ -69,7 +69,7 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
     // Test serialization
     testImplementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.1")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
     testImplementation("com.github.jershell:kbson:0.4.4")
     testImplementation("org.mongodb:bson:4.5.0")
 }
