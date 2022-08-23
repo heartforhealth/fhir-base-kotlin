@@ -9,11 +9,11 @@
 
 
 group = "io.h4h"
-version = "0.1.3-alpha1"
+version = "0.1.4"
 
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
-    id("org.jetbrains.kotlin.jvm") version "1.6.21"
+    id("org.jetbrains.kotlin.jvm") version "1.7.10"
 
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
@@ -23,7 +23,7 @@ plugins {
     id("com.google.cloud.artifactregistry.gradle-plugin") version "2.1.4"
 
     // Kotlinx Serialization
-    kotlin("plugin.serialization") version "1.6.21"
+    kotlin("plugin.serialization") version "1.7.10"
 }
 
 repositories {
@@ -59,13 +59,12 @@ dependencies {
 
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-serialization-core-jvm
-    api("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.3.3")
+    api("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.4.0")
     // kotlinx datetime
     api("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
 
     // Use the Kotlin test library.
     testImplementation("org.jetbrains.kotlin:kotlin-test")
-
     // Use the Kotlin JUnit integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
     // Test serialization

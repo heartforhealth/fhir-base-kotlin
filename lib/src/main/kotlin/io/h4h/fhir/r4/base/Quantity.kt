@@ -70,7 +70,29 @@ data class Quantity(
      */
     val code: String? = null
 
-)
+) {
+
+    override fun equals(other: Any?): Boolean {
+        return when (other) {
+            is Quantity -> {
+                (this.value == other.value)
+                && (this.comparator == other.comparator)
+                && (this.code == other.code)
+                && (this.system == other.system)
+            }
+            else -> false
+        }
+    }
+
+    override fun hashCode(): Int {
+        var result = value?.hashCode() ?: 0
+        result = 31 * result + (comparator?.hashCode() ?: 0)
+        result = 31 * result + (system?.hashCode() ?: 0)
+        result = 31 * result + (code?.hashCode() ?: 0)
+        return result
+    }
+
+}
 
 
 
