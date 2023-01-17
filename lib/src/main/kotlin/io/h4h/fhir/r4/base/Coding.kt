@@ -83,4 +83,9 @@ data class Coding @JvmOverloads constructor(
         return result
     }
 
+    fun validate() {
+        if (code.isNullOrBlank() || system.isNullOrBlank()) {
+            throw IllegalStateException("Coding expected to contain 'code' and 'system'")
+        }
+    }
 }
