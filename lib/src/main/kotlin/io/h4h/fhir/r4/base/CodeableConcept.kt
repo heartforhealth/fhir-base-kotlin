@@ -81,4 +81,12 @@ data class CodeableConcept @JvmOverloads constructor(
         return result
     }
 
+
+    fun validate() {
+        if (coding.isNullOrEmpty()) {
+            throw IllegalStateException("CodeableConcept expected to contain 'coding'")
+        }
+
+        coding.forEach { it.validate() }
+    }
 }
