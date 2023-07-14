@@ -6,9 +6,8 @@ interface CodeableEnumeration {
 
     val display: String?
     val definition: String?
-    val system: String?
-    val code: String?
-
+    val system: String
+    val code: String
 
 
     /// export FHIR Coding

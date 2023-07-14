@@ -44,7 +44,7 @@ data class CodeableConcept @JvmOverloads constructor(
     /**
      * A reference to a code defined by a terminology system.
      */
-    val coding: List<Coding>? = null,
+    val coding: List<Coding>,
 
     /**
      * A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.
@@ -58,11 +58,11 @@ data class CodeableConcept @JvmOverloads constructor(
         return when (other) {
             is CodeableConcept -> {
                 // base condition
-                if (this.coding.isNullOrEmpty() && other.coding.isNullOrEmpty()) return true
+                if (this.coding.isEmpty() && other.coding.isEmpty()) return true
 
                 // if at least one coding is the same, return true
-                this.coding?.forEach { coding ->
-                    other.coding?.firstOrNull { coding == it }?.let {
+                this.coding.forEach { coding ->
+                    other.coding.firstOrNull { coding == it }?.let {
                         return@equals true
                     }
                 }
@@ -76,14 +76,14 @@ data class CodeableConcept @JvmOverloads constructor(
 
 
     override fun hashCode(): Int {
-        var result = coding?.hashCode() ?: 0
+        var result = coding.hashCode()
         result = 31 * result + (text?.hashCode() ?: 0)
         return result
     }
 
 
     fun validate() {
-        if (coding.isNullOrEmpty()) {
+        if (coding.isEmpty()) {
             throw IllegalStateException("CodeableConcept expected to contain 'coding'")
         }
 

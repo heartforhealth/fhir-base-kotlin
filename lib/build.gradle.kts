@@ -9,7 +9,7 @@
 
 
 group = "io.h4h"
-version = "0.1.6"
+version = "0.1.7"
 
 
 plugins {
@@ -65,7 +65,7 @@ dependencies {
 
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-serialization-core-jvm
-    api("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.5.0")
+    api("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.5.1")
     // kotlinx datetime
     api("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
 

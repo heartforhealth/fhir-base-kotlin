@@ -44,7 +44,7 @@ data class Coding @JvmOverloads constructor(
     /**
      * The identification of the code system that defines the meaning of the symbol in the code.
      */
-    val system: String? = null,
+    val system: String,
 
     /**
      * The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
@@ -54,7 +54,7 @@ data class Coding @JvmOverloads constructor(
     /**
      * A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).
      */
-    val code: String? = null,
+    val code: String,
 
     /**
      * A representation of the meaning of the code in the system, following the rules of the system.
@@ -78,13 +78,13 @@ data class Coding @JvmOverloads constructor(
     }
 
     override fun hashCode(): Int {
-        var result = system?.hashCode() ?: 0
-        result = 31 * result + (code?.hashCode() ?: 0)
+        var result = system.hashCode()
+        result = 31 * result + code.hashCode()
         return result
     }
 
     fun validate() {
-        if (code.isNullOrBlank() || system.isNullOrBlank()) {
+        if (code.isBlank() || system.isBlank()) {
             throw IllegalStateException("Coding expected to contain 'code' and 'system'")
         }
     }
