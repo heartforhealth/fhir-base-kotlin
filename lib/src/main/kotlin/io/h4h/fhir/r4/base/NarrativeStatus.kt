@@ -32,7 +32,7 @@ enum class NarrativeStatus : CodeableEnumeration {
     EMPTY;
 
 
-    override val code: String?
+    override val code: String
         get() = when (this) {
             GENERATED -> "generated"
             EXTENSIONS -> "extensions"

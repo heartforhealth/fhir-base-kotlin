@@ -9,7 +9,7 @@
 
 
 group = "io.h4h"
-version = "0.1.5"
+version = "0.1.7"
 
 
 plugins {
@@ -65,19 +65,19 @@ dependencies {
 
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-serialization-core-jvm
-    api("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.6.0")
+    api("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.5.1")
     // kotlinx datetime
-    api("org.jetbrains.kotlinx:kotlinx-datetime:0.4.1")
+    api("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
 
     // Use the Kotlin test library.
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     // Use the Kotlin JUnit integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
     // Test serialization
-    testImplementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.1")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
-    testImplementation("com.github.jershell:kbson:0.4.4")
-    testImplementation("org.mongodb:bson:4.5.0")
+    testImplementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.14.2")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
+    testImplementation("com.github.jershell:kbson:0.5.0")
+    testImplementation("org.mongodb:bson:4.9.0")
 }
 
 
