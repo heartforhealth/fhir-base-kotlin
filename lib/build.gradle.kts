@@ -65,9 +65,9 @@ dependencies {
 
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-serialization-core-jvm
-    api("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.4.0")
+    api("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.6.0")
     // kotlinx datetime
-    api("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+    api("org.jetbrains.kotlinx:kotlinx-datetime:0.4.1")
 
     // Use the Kotlin test library.
     testImplementation("org.jetbrains.kotlin:kotlin-test")

@@ -1,5 +1,7 @@
 package io.h4h.fhir.r4.base
 
+import io.h4h.fhir.r4.serializers.InstantSerializer
+import kotlinx.datetime.Instant
 import kotlinx.serialization.Serializable
 
 
@@ -46,12 +48,13 @@ data class Period(
      * The start of the period. The boundary is inclusive.
      *  	A date, date-time or partial date (e.g. just year or year + month) as used in human communication. The format is YYYY, YYYY-MM, YYYY-MM-DD or YYYY-MM-DDThh:mm:ss+zz:zz, e.g. 2018, 1973-06, 1905-08-23, 2015-02-07T13:28:17-05:00 or 2017-01-01T00:00:00.000Z.
      */
-    val start: String? = null,
+    @Serializable(with= InstantSerializer::class)
+    val start: Instant? = null,
 
     /**
      * The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.
      *  	A date, date-time or partial date (e.g. just year or year + month) as used in human communication. The format is YYYY, YYYY-MM, YYYY-MM-DD or YYYY-MM-DDThh:mm:ss+zz:zz, e.g. 2018, 1973-06, 1905-08-23, 2015-02-07T13:28:17-05:00 or 2017-01-01T00:00:00.000Z.
      */
-    val end: String? = null
-
+    @Serializable(with= InstantSerializer::class)
+    val end: Instant? = null
 )
