@@ -9,7 +9,7 @@
 
 
 group = "io.h4h"
-version = "0.1.7"
+version = "0.1.8-RC1"
 
 
 plugins {
