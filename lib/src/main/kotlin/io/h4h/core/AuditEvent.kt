@@ -1,6 +1,5 @@
-package io.h4h.ehealth.core
+package io.h4h.core
 
-import io.h4h.ehealth.currentDateIsoString
 import io.h4h.fhir.r4.base.Reference
 import kotlinx.serialization.Serializable
 
@@ -38,7 +37,7 @@ data class AuditEvent @JvmOverloads constructor(
     val context: Reference? = null,
 
 
-)
+    )
 
 
 /// ==============================================================

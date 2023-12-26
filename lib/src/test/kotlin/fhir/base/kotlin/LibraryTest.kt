@@ -6,8 +6,8 @@ package fhir.base.kotlin
 import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.databind.ObjectMapper
-import io.h4h.ehealth.core.AuditEvent
-import io.h4h.ehealth.core.AuditEventType
+import io.h4h.core.AuditEvent
+import io.h4h.core.AuditEventType
 import io.h4h.fhir.r4.base.Identifier
 import io.h4h.fhir.r4.base.Reference
 import kotlin.test.Test

@@ -1,6 +1,6 @@
 @file:JvmName("DateExtensions")
 
-package io.h4h.ehealth
+package io.h4h.core
 
 
 import java.time.ZoneOffset

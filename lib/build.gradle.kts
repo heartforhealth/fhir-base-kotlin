@@ -9,12 +9,12 @@
 
 
 group = "io.h4h"
-version = "0.1.8-RC1"
+version = "0.2.0"
 
 
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
-    id("org.jetbrains.kotlin.jvm") version "1.7.10"
+    id("org.jetbrains.kotlin.jvm") version "1.9.22"
 
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
@@ -22,7 +22,7 @@ plugins {
     `maven-publish`
 
     // Kotlinx Serialization
-    kotlin("plugin.serialization") version "1.7.10"
+    kotlin("plugin.serialization") version "1.9.22"
 }
 
 repositories {
@@ -65,19 +65,19 @@ dependencies {
 
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-serialization-core-jvm
-    api("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.5.1")
+    api("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.6.2")
     // kotlinx datetime
-    api("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+    api("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
 
     // Use the Kotlin test library.
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     // Use the Kotlin JUnit integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
     // Test serialization
-    testImplementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.14.2")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
+    testImplementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.16.1")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
     testImplementation("com.github.jershell:kbson:0.5.0")
-    testImplementation("org.mongodb:bson:4.9.0")
+    testImplementation("org.mongodb:bson:4.11.1")
 }
 
 
@@ -88,15 +88,4 @@ tasks.jar {
     }
     // set jar base name
     archiveBaseName.set(rootProject.name)
-}
-
-
-testing {
-    suites {
-        // Configure the built-in test suite
-        val test by getting(JvmTestSuite::class) {
-            // Use Kotlin Test test framework
-            useKotlinTest()
-        }
-    }
 }
