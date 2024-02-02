@@ -13,7 +13,6 @@ enum class ResourceType {
     AllergyIntolerance,
     Appointment,
     AppointmentResponse,
-    AuditEvent,
     Basic,
     Binary,
     BiologicallyDerivedProduct,
@@ -164,7 +163,6 @@ enum class ResourceType {
             AllergyIntolerance -> "allergyintolerance"
             Appointment -> "appointment"
             AppointmentResponse -> "appointmentresponse"
-            AuditEvent -> "auditevent"
             Basic -> "basic"
             Binary -> "binary"
             BiologicallyDerivedProduct -> "biologicallyderivedproduct"
