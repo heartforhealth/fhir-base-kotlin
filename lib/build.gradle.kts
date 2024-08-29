@@ -9,7 +9,7 @@
 
 
 group = "io.h4h"
-version = "0.2.2"
+version = "0.2.3"
 
 
 plugins {
@@ -78,6 +78,9 @@ dependencies {
     testImplementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
     testImplementation("com.github.jershell:kbson:0.5.0")
     testImplementation("org.mongodb:bson:4.11.1")
+
+    // Jackson annocations
+    implementation("com.fasterxml.jackson.core:jackson-annotations:2.16.1")
 }
 
 
