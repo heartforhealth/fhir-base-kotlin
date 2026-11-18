@@ -9,7 +9,7 @@
 
 
 group = "io.h4h"
-version = "0.2.3"
+version = "0.2.4"
 
 
 plugins {
@@ -81,6 +81,13 @@ dependencies {
 
     // Jackson annocations
     implementation("com.fasterxml.jackson.core:jackson-annotations:2.16.1")
+
+    constraints {
+        api("io.h4h:fhir-kotlin") {
+            version { reject("[0.0,0.3.6)") }
+            because("Annotation moved here in 0.2.4; fhir-kotlin < 0.3.6 still ships its own copy")
+        }
+    }
 }
 
 
