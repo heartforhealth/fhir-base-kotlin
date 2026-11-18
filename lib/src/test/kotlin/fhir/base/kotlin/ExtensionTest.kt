@@ -5,6 +5,7 @@ import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.descriptors.PolymorphicKind
 import kotlinx.serialization.descriptors.SerialDescriptor
 import kotlinx.serialization.descriptors.SerialKind
+import kotlinx.serialization.descriptors.StructureKind
 import kotlinx.serialization.encodeToString
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -60,7 +61,9 @@ class ExtensionTest : ResourceTest() {
         fun walk(descriptor: SerialDescriptor, path: String) {
             if (descriptor.kind is PolymorphicKind || descriptor.kind == SerialKind.CONTEXTUAL)
                 offending += "$path: ${descriptor.serialName}"
-            if (!visited.add(descriptor.serialName)) return
+            // only classes are deduplicated: every List<T> shares one serialName regardless of T,
+            // and recursion always passes through a class, so this still terminates
+            if (descriptor.kind == StructureKind.CLASS && !visited.add(descriptor.serialName)) return
             for (i in 0 until descriptor.elementsCount)
                 walk(descriptor.getElementDescriptor(i), "$path.${descriptor.getElementName(i)}")
         }
