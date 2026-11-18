@@ -104,6 +104,97 @@ data class Extension(
 
 ) {
 
+    /// Binary compatibility with code compiled against 0.2.3, where valueAnnotation was
+    /// accidentally typed kotlin.Annotation (e.g. io.h4h:terminology's Devices). Hidden, so
+    /// Kotlin callers always resolve to the primary constructor; the value is dropped
+    /// because nothing could ever pass a usable kotlin.Annotation here.
+    @Deprecated("valueAnnotation is the FHIR Annotation since 0.2.4", level = DeprecationLevel.HIDDEN)
+    constructor(
+        url: String? = null,
+        valueAnnotation: kotlin.Annotation? = null,
+        valueAddress: Address? = null,
+        valueAttachment: Attachment? = null,
+        valueBase64Binary: String? = null,
+        valueBoolean: Boolean? = null,
+        valueCanonical: String? = null,
+        valueCode: String? = null,
+        valueCodeableConcept: CodeableConcept? = null,
+        valueCoding: Coding? = null,
+        valueContactPoint: ContactPoint? = null,
+        valueContactDetail: ContactDetail? = null,
+        valueDataRequirement: DataRequirement? = null,
+        valueDate: String? = null,
+        valueDateTime: String? = null,
+        valueDecimal: Double? = null,
+        valueHumanName: HumanName? = null,
+        valueId: String? = null,
+        valueIdentifier: Identifier? = null,
+        valueInstant: String? = null,
+        valueInteger: Int? = null,
+        valueMarkdown: String? = null,
+        valueMeta: Meta? = null,
+        valueOid: String? = null,
+        valuePeriod: Period? = null,
+        valuePositiveInt: Int? = null,
+        valueQuantity: Quantity? = null,
+        valueRange: Range? = null,
+        valueRelatedArtifact: RelatedArtifact? = null,
+        valueRatio: Ratio? = null,
+        valueReference: Reference? = null,
+        valueSampledData: SampledData? = null,
+        valueSignature: Signature? = null,
+        valueString: String? = null,
+        valueTiming: Timing? = null,
+        valueTime: String? = null,
+        valueUnsignedInt: Int? = null,
+        valueUri: String? = null,
+        valueUrl: String? = null,
+        valueUsageContext: UsageContext? = null,
+        valueUuid: String? = null
+    ) : this(
+        url = url,
+        valueAddress = valueAddress,
+        valueAttachment = valueAttachment,
+        valueBase64Binary = valueBase64Binary,
+        valueBoolean = valueBoolean,
+        valueCanonical = valueCanonical,
+        valueCode = valueCode,
+        valueCodeableConcept = valueCodeableConcept,
+        valueCoding = valueCoding,
+        valueContactPoint = valueContactPoint,
+        valueContactDetail = valueContactDetail,
+        valueDataRequirement = valueDataRequirement,
+        valueDate = valueDate,
+        valueDateTime = valueDateTime,
+        valueDecimal = valueDecimal,
+        valueHumanName = valueHumanName,
+        valueId = valueId,
+        valueIdentifier = valueIdentifier,
+        valueInstant = valueInstant,
+        valueInteger = valueInteger,
+        valueMarkdown = valueMarkdown,
+        valueMeta = valueMeta,
+        valueOid = valueOid,
+        valuePeriod = valuePeriod,
+        valuePositiveInt = valuePositiveInt,
+        valueQuantity = valueQuantity,
+        valueRange = valueRange,
+        valueRelatedArtifact = valueRelatedArtifact,
+        valueRatio = valueRatio,
+        valueReference = valueReference,
+        valueSampledData = valueSampledData,
+        valueSignature = valueSignature,
+        valueString = valueString,
+        valueTiming = valueTiming,
+        valueTime = valueTime,
+        valueUnsignedInt = valueUnsignedInt,
+        valueUri = valueUri,
+        valueUrl = valueUrl,
+        valueUsageContext = valueUsageContext,
+        valueUuid = valueUuid
+    )
+
+
     /// 2 extensions with the same URL are considered equal
     override fun equals(other: Any?): Boolean {
         return when (other) {
